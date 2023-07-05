@@ -1,3 +1,98 @@
-body {
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
   font-family: "Overpass", sans-serif;
+}
+.section-title {
+  position: relative;
+  margin: 0;
+  margin-bottom: 36px;
+  padding-left: 60px;
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+/* Header */
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #e6e6e6;
+}
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.nav a {
+  padding: 14px 10px;
+  line-height: 50px;
+  color: black;
+}
+.nav a:hover {
+  background-color: #f2c100;
+}
+.nav a:active {
+  color: white;
+  text-decoration: none;
+}
+/* Left side */
+.left-side {
+  width: 100%;
+  color: white;
+  background-color: #2c323d;
+}
+.figure--left-side {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: min-content;
+  background-color: #343945;
+}
+
+.left-side .section-title {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+/* Contact */
+.contact {
+  padding: 44px 0px 54px 0px;
+  background-color: #343945;
+}
+.contact__list {
+  list-style: none;
+  margin: 0;
+  margin-left: 60px;
+  margin-right: 60px;
+  padding: 0;
+}
+.contact__item {
+  margin-bottom: 25px;
+}
+.contact__item:last-child {
+  margin-bottom: 0;
+}
+.contact__item a {
+  display: block;
+}
+
+/* Education */
+.education {
+  padding: 54px 0px 54px 0px;
+}
+.education__list {
+  margin: 0;
+  margin-left: 60px;
+  margin-right: 60px;
+  padding: 0;
+  list-style: none;
+}
+.education__item {
+  margin-bottom: 25px;
+}
+.education__item:last-child {
+  margin-bottom: 0;
 }
