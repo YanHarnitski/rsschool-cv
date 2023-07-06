@@ -58,6 +58,9 @@ header {
 .left-side .section-title {
   background-color: rgba(255, 255, 255, 0.1);
 }
+.photo {
+  margin-left: 35px;
+}
 /* Contact */
 .contact {
   padding: 44px 0px 54px 0px;
@@ -101,13 +104,7 @@ header {
 .right-side .section-title {
   background-color: rgba(0, 0, 0, 0.1);
 }
-.figure--right-side {
-  display: none;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: min-content;
-}
+
 .page-title {
   margin: 125px 80px 125px 60px;
 }
@@ -166,7 +163,7 @@ header {
   text-decoration: none;
 }
 
-/* Projects section */
+/* Project */
 .project {
   margin-bottom: 30px;
 }
@@ -190,37 +187,35 @@ header {
   font-weight: 400;
   color: black;
 }
-.project__title:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 50%;
-  height: 2px;
-  background-color: #ccc;
-}
-.project__technologies img {
+
+.project__technologies {
   width: 200px;
 }
-.project__item:hover .projects__image {
-  box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.3);
+
+/* Work experience */
+.work {
+  padding: 0;
+  margin-bottom: 54px;
 }
-.project__item:hover .projects__title {
-  text-shadow: 0px 3px 3px rgba(150, 150, 150, 1);
+.work p {
+  margin: 0 60px 0 60px;
+  padding: 0;
+  font-size: 16px;
+  line-height: 24px;
 }
-.project__item:hover .projects__title:after {
-  width: 100%;
-  background-color: #f2c100;
+.work__list {
+  margin: 0px 60px;
+  padding: 0;
+  padding-left: 20px;
 }
-.project__item:active .projects__image {
-  box-shadow: 0px 0px 7px 7px rgba(0, 0, 0, 0.2);
+/* Courses */
+.courses {
+  margin-bottom: 54px;
 }
-.project__item:active .projects__title {
-  color: rgba(0, 0, 0, 0.5);
-  text-shadow: none;
-}
-.project__item:active .projects__title:after {
-  background-color: #ccc;
+.courses__list {
+  margin: 0px 60px;
+  padding: 0;
+  padding-left: 20px;
 }
 /* Footer */
 .footer {
@@ -235,17 +230,7 @@ header {
   position: relative;
   padding-left: 40px;
 }
-.footer__github::before {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 0;
-  width: 32px;
-  height: 32px;
-  background-image: url("../img/github-logo.svg");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
+
 .footer__year {
   justify-self: center;
 }
@@ -261,10 +246,7 @@ header {
   .container {
     grid-template-columns: 380px 1fr;
   }
-  .figure--right-side {
-    display: none;
-  }
-  .projects__list {
+  .project__list {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
