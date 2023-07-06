@@ -26,16 +26,15 @@
         </ul>
       </nav>
     </header>
-    <main>
+    <main class="container">
       <div class="left-side">
-        <figure class="figure--left-side">
-          <img
-            src="photo.jpg"
-            width="250"
-            height="300"
-            alt="Yan Harnitski Photo"
-          />
-        </figure>
+        <img
+          src="photo.jpg"
+          width="250"
+          height="300"
+          alt="Yan Harnitski Photo"
+        />
+
         <section class="contact">
           <h2 class="section-title">Contact</h2>
           <ul class="contact__list">
@@ -82,6 +81,137 @@
           </ul>
         </section>
       </div>
+      <div class="right-side">
+        <section class="page-title">
+          <h1 class="main-title">Yan Harnitski</h1>
+          <p>Front-End developer</p>
+        </section>
+        <section class="about-me" id="about-me">
+          <h2 class="section-title">About me</h2>
+          <p>
+            I have 20 months of experience in Google tagging and I want to learn
+            more about Javascript. Also I am interested in Data Analytics.
+            Learning new things makes me happy.
+          </p>
+        </section>
+        <section class="skills" id="skills">
+          <h2 class="section-title">Skills</h2>
+          <ul class="skills__list">
+            <li>HTML 5, CSS3, JS6, React</li>
+            <li>SQL, Excel, Node.js basics</li>
+            <li>
+              Google Analytics 4, Google Ads, Google Tag Manager, Google
+              Merchant Center
+            </li>
+            <li>Git, GitHub</li>
+            <li>English - C1 level</li>
+          </ul>
+        </section>
+
+        <section class="code-example" id="code-example">
+          <h2 class="section-title">Code example</h2>
+          <details>
+            <summary>From Udemy course by Jonas Schmedtmann</summary>
+            <pre>
+                <code data-language = "javascript">
+                  'use strict';
+
+                  let secretNumber = Math.trunc(Math.random() * 20) + 1;
+                  let score = 20;
+                  let highscore = 0;
+                  
+                  const displayMessage = function (message) {
+                    document.querySelector('.message').textContent = message;
+                  };
+                  
+                  document.querySelector('.check').addEventListener('click', function () {
+                    const guess = Number(document.querySelector('.guess').value);
+                    
+                  
+                    // When there is no input
+                    if (!guess) {
+                      displayMessage('⛔️ No number!');
+                    // When player wins
+                    } else if (guess === secretNumber) {
+                    
+                      displayMessage('🎉 Correct Number!');
+                      document.querySelector('.number').textContent = secretNumber;
+                  
+                      document.querySelector('body').style.backgroundColor = '#60b347';
+                      document.querySelector('.number').style.width = '30rem';
+                  
+                      if (score > highscore) {
+                        highscore = score;
+                        document.querySelector('.highscore').textContent = highscore;
+                      }
+                  
+                      // When guess is wrong
+                    } else if (guess !== secretNumber) {
+                      if (score > 1) {
+                        
+                        displayMessage(guess > secretNumber ? '📈 Too high!' : '📉 Too low!');
+                        score--;
+                        document.querySelector('.score').textContent = score;
+                      } else {
+                        
+                        displayMessage('💥 You lost the game!');
+                        document.querySelector('.score').textContent = 0;
+                      }
+                    }
+                  
+                  document.querySelector('.again').addEventListener('click', function () {
+                    score = 20;
+                    secretNumber = Math.trunc(Math.random() * 20) + 1;
+                  
+                    
+                    displayMessage('Start guessing...');
+                    document.querySelector('.score').textContent = score;
+                    document.querySelector('.number').textContent = '?';
+                    document.querySelector('.guess').value = '';
+                  
+                    document.querySelector('body').style.backgroundColor = '#222';
+                    document.querySelector('.number').style.width = '15rem';
+                  });
+                </code>
+              </pre>
+          </details>
+        </section>
+        <section class="project">
+          <h2 class="section-title">My project</h2>
+          <ul class="project__list">
+            <li class="project__item">
+              <a
+                href="https://yanharnitski.github.io/robofriends/"
+                target="_blank"
+              >
+                <h3 class="project__title">
+                  RoboFriends
+                  <div class="project__technologies">
+                    <img
+                      src="technologies.jpg"
+                      alt="technologies"
+                      title="technologies"
+                    />
+                  </div>
+                </h3>
+              </a>
+            </li>
+          </ul>
+        </section>
+      </div>
     </main>
+    <footer class="footer">
+      <a
+        class="footer__github"
+        href="https://github.com/YanHarnitski"
+        target="_blank"
+      >
+        GitHub
+      </a>
+      <p class="footer__year">2023</p>
+      <a class="footer__rsschool" href="https://rs.school/js/" target="_blank">
+        <img src="rs_school_js.svg" width="86" height="32" alt="RS School" />
+      </a>
+    </footer>
   </body>
 </html>
