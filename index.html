@@ -1,7 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <title>Yan Harnitski CV</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin >
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="style.css" >
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="tel:+48519758149">Telephone</a></li>
+          <li class="nav__item">
+            <a href="mailto:yanharnitski@gmail.com">Email</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://www.linkedin.com/in/yan-harnitski/">LinkedIn</a>
+          </li>
+          <li class="nav__item">
+            <a href="https://yanharnitski.github.io/robofriends/">RoboFriends App</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="container">
+      <div class="left-side">
+        <img
+          src="photo.jpg"
+          width="300"
+          height="360"
+          alt="Yan Harnitski Photo"
+          class="photo"
+        >
+
+        <section class="contact">
+          <h2 class="section-title">Contact</h2>
+          <ul class="contact__list">
+            <li class="contact__item">
+              Telephone:<br>
+              <a href="tel:+48519758149">+48519758149</a>
+            </li>
+            <li class="contact__item">
+              Email:<br><a href="mailto:yanharnitski@gmail.com"
+                >yanharnitski@gmail.com</a
+              >
+            </li>
+            <li class="contact__item">
+              LinkedIn:<br>
+              <a href="https://www.linkedin.com/in/yan-harnitski/"
+                >Yan Harnitski</a
+              >
+            </li>
+            <li class="contact__item">
+              Address:<br>
+              Krakow, Poland
+            </li>
+          </ul>
+        </section>
+        <section class="education">
+          <h2 class="section-title">Education</h2>
+          <ul class="education__list">
+            <li class="education__item">
+              2009-2015 <br>
+              Jagiellonian University <br>
+              Journalism and Social Communication
+              <br>
+              Bachelor degree
+            </li>
+            <li class="education__item">
+              2022-now <br>
+              Zero to Mastery Academy <br>
+              Courses, workshops and career paths<br>
+              World-class instructors <br>with real-world experience
+            </li>
+            <li class="education__item">
+              2023 <br>RS School - Front-end Developer
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="right-side">
+        <section class="page-title">
+          <h1 class="main-title">Yan Harnitski</h1>
+          <p>Front-End developer</p>
+        </section>
+        <section class="about-me">
+          <h2 class="section-title">About me</h2>
+          <p>
+            I have 20 months of experience in Google tagging and I want to learn
+            more about Javascript. Also I am interested in Data Analytics.
+            Learning new things makes me happy.
+          </p>
+        </section>
+        <section class="skills">
+          <h2 class="section-title">Skills</h2>
+          <ul class="skills__list">
+            <li>HTML 5, CSS3, JS6, React</li>
+            <li>SQL, Excel, Node.js basics</li>
+            <li>
+              Google Analytics 4, Google Ads, Google Tag Manager, Google
+              Merchant Center
+            </li>
+            <li>Git, GitHub</li>
+            <li>Belarusian, Russian, Polish - native</li>
+            <li>English - C1 level</li>
+          </ul>
+        </section>
+
+        <section class="code-example">
+          <h2 class="section-title">Code example</h2>
+          <details>
+            <summary>From Udemy course by Jonas Schmedtmann</summary>
+            <pre>
+                <code data-language = "javascript">
+                  'use strict';
+
+                  let secretNumber = Math.trunc(Math.random() * 20) + 1;
+                  let score = 20;
+                  let highscore = 0;
+                  
+                  const displayMessage = function (message) {
+                    document.querySelector('.message').textContent = message;
+                  };
+                  
+                  document.querySelector('.check').addEventListener('click', function () {
+                    const guess = Number(document.querySelector('.guess').value);
+                    
+                  
+                    // When there is no input
+                    if (!guess) {
+                      displayMessage('⛔️ No number!');
+                    // When player wins
+                    } else if (guess === secretNumber) {
+                    
+                      displayMessage('🎉 Correct Number!');
+                      document.querySelector('.number').textContent = secretNumber;
+                  
+                      document.querySelector('body').style.backgroundColor = '#60b347';
+                      document.querySelector('.number').style.width = '30rem';
+                  
+                      if (score > highscore) {
+                        highscore = score;
+                        document.querySelector('.highscore').textContent = highscore;
+                      }
+                  
+                      // When guess is wrong
+                    } else if (guess !== secretNumber) {
+                      if (score > 1) {
+                        
+                        displayMessage(guess > secretNumber ? '📈 Too high!' : '📉 Too low!');
+                        score--;
+                        document.querySelector('.score').textContent = score;
+                      } else {
+                        
+                        displayMessage('💥 You lost the game!');
+                        document.querySelector('.score').textContent = 0;
+                      }
+                    }
+                  
+                  document.querySelector('.again').addEventListener('click', function () {
+                    score = 20;
+                    secretNumber = Math.trunc(Math.random() * 20) + 1;
+                  
+                    
+                    displayMessage('Start guessing...');
+                    document.querySelector('.score').textContent = score;
+                    document.querySelector('.number').textContent = '?';
+                    document.querySelector('.guess').value = '';
+                  
+                    document.querySelector('body').style.backgroundColor = '#222';
+                    document.querySelector('.number').style.width = '15rem';
+                  });
+                </code>
+              </pre>
+          </details>
+        </section>
+        <section class="project">
+          <h2 class="section-title">My project</h2>
+          <ul class="project__list">
+            <li class="project__item">
+              <a
+                href="https://yanharnitski.github.io/robofriends/"
+              >
+                <h3 class="project__title">
+                  RoboFriends App
+                  
+                    <img class="project__technologies"
+                      src="technologies.jpg"
+                      alt="technologies"
+                      title="technologies"
+                    />
+                  
+                </h3>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section class="work">
+          <h2 class="section-title">Work experience</h2>
+          <p>
+            Senior Process Executive <br>
+            From 04.2021 to 11.2022 <br>
+            Cognizant Technology Solutions Poland for Google LLC <br>
+            <ul class="work__list">  
+              <li>Implement & Support Google services: Adwords, Analytics (UA & GA4), Merchant Center, Google
+              Tag Manager</li>
+              <li>Tag implementation on CMS platforms: Wordpress, Prestashop, Magento, Joomla, Shoper, Tilda,
+              WooCommerce, Shopify, Bitrix, Wix, OpenCart</li>
+              <li>Tag Implementation and Troubleshooting: Ads and Analytics Conversion Tracking, Ads Remarketing
+              (incl. Dynamic), Analytics Remarketing (incl. Dynamic), Enhanced Ecommerce, Shopping Feed
+              Optimization, Enhanced Conversions</li>
+              <li>Customer service: support and troubleshoot implementation via GVC</li>
+            </ul>
+          </p>
+        </section>
+        <section class="courses">
+          <h2 class="section-title">Courses</h2>
+          <ul class="courses__list">
+            <li>04.2021 Google Analytics Certification: Become Analytics Certified! <br>
+              Daragh Walsh, Udemy</li>
+            <li>04.2021 Fundamentals of Digital Marketing <br>
+              Google</li>
+            <li>
+              05.2021 Devtools Pro: Beginner to Expert w/ Chrome Developer Tools <br>
+              Rocco Balsamo, Udemy
+            </li>
+            <li>02.2023 The Excel Bootcamp <br>
+              Travis Cuzick, ZTM Academy</li>
+            <li>02.2023 Complete Web Developer in 2023 <br>
+              Andrei Neagoie, ZTM Academy</li>
+            <li>03.2023 Complete SQL + Databases Bootcamp <br>
+              Mo Binni, ZTM Academy</li>
+          </ul>
+        </section>
+    </main>
+    <footer class="footer">
+      <a
+        class="footer__github"
+        href="https://github.com/YanHarnitski"
+        target="_blank"
+      >
+        GitHub
+      </a>
+      <p class="footer__year">2023</p>
+      <a class="footer__rsschool" href="https://rs.school/js/" target="_blank">
+        <img src="rs_school_js.svg" width="86" height="32" alt="RS School" />
+      </a>
+    </footer>
+  </body>
 </html>
